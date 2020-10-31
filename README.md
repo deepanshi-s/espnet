@@ -39,9 +39,12 @@ make depend -j 4
 make -j 4
 ```
 ## Extracting X-vectors 
-Once all the necessary packages have been installed, following steps should be followed:
-1. change MAIN_ROOT and KALDI_ROOT in path.sh file in espnet//egs//libritts//tts1 
-2. Run espnet//egs//libritts//tts1//run.sh
+Once all the necessary packages have been installed:
+* Change MAIN_ROOT and KALDI_ROOT in path.sh file in espnet//egs//libritts//tts1 
+ 
+``` 
+bash espnet//egs//libritts//tts1//run.sh
+```
 
 ## References
 
