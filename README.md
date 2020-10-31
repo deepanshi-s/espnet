@@ -28,11 +28,12 @@ bash extras//install_mkl.sh
 bash extras/install_irstlm.sh
 sudo apt-get install sox
 ```
+In case the system has all the required packages the check_dependencies.sh file will output ALL OK. Else it will enlist the missing packages. Rerun the file after installiing all the requirements. 
 ```
+make -j 2
 bash extras//check_dependencies.sh
 ```
-In case the system has all the required packages the check_dependencies.sh file will output ALL OK. Else it will enlist the missing packages. Rerun the file after installiing all the requirements. 
-```make -j 2
+```
 cd espnet//tools//kaldi//src
 ./configure
 make depend -j 4
