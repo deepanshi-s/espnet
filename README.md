@@ -1,3 +1,48 @@
+This is a repository to extract x-vectors from the libritts dataset (https://research.google/tools/datasets/libri-tts/) from the espnet git repository. 
+
+## Usage and Installation
+### Installation of ParallelWaveGAN
+```
+git clone https://github.com/MeiGM/ParallelWaveGAN.git
+cd ParallelWaveGAN
+pip install -e .
+```
+``` 
+pip install espnet
+```
+### Installation of necessary Packages for Kaldi install
+```
+mkdir -p espnet/tools/venv/bin
+touch espnet/tools/venv/bin/activate
+git clone https://github.com/espnet/warp-ctc -b pytorch-1.1
+cd warp-ctc && mkdir build && cd build && cmake .. && make -j4
+cd warp-ctc/pytorch_binding && python setup.py install
+cd /espnet/tools
+apt-get install -qq g++ automake autoconf libtool subversion
+```
+### Kaldi installation
+```
+git clone https://github.com/kaldi-asr/kaldi
+os.chdir('kaldi//tools')
+bash extras//install_mkl.sh
+bash extras/install_irstlm.sh
+sudo apt-get install sox
+```
+```
+bash extras//check_dependencies.sh
+```
+In case the system has all the required packages the check_dependencies.sh file will output ALL OK. Else it will enlist the missing packages. Rerun the file after installiing all the requirements. 
+```make -j 2
+cd espnet//tools//kaldi//src
+./configure
+make depend -j 4
+make -j 4
+```
+## Extracting X-vectors 
+Once all the necessary packages have been installed, following steps should be followed:
+1. change MAIN_ROOT and KALDI_ROOT in path.sh file in espnet//egs//libritts//tts1 
+2. Run espnet//egs//libritts//tts1//run.sh
+
 ## References
 
 [1] Shinji Watanabe, Takaaki Hori, Shigeki Karita, Tomoki Hayashi, Jiro Nishitoba, Yuya Unno, Nelson Enrique Yalta Soplin, Jahn Heymann, Matthew Wiesner, Nanxin Chen, Adithya Renduchintala, and Tsubasa Ochiai, "ESPnet: End-to-End Speech Processing Toolkit," *Proc. Interspeech'18*, pp. 2207-2211 (2018)
