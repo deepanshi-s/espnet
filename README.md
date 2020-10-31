@@ -43,9 +43,13 @@ Once all the necessary packages have been installed:
 * Change MAIN_ROOT and KALDI_ROOT in path.sh file in espnet//egs//libritts//tts1.
 * Run the x-vector extraction file, run.sh in libritts/tts1 folder.
 ``` 
-bash espnet//egs//libritts//tts1//run.sh
+cd  espnet//egs//libritts//tts1
+bash run.sh
 ```
+## Seaprating X-vectors for different speakers from the .ark file
+Run the xvec_extraction.py file, it will generate a new folder (xvectors) in the current working directory with the embedding file for each speaker. 
 
+Note: Incase the directory of the .ark files is changed from exp/xvector_nnet_1a/xvectors_train_clean_100, make changes accordingly in the xvec_extraction.py file
 ## References
 
 [1] Shinji Watanabe, Takaaki Hori, Shigeki Karita, Tomoki Hayashi, Jiro Nishitoba, Yuya Unno, Nelson Enrique Yalta Soplin, Jahn Heymann, Matthew Wiesner, Nanxin Chen, Adithya Renduchintala, and Tsubasa Ochiai, "ESPnet: End-to-End Speech Processing Toolkit," *Proc. Interspeech'18*, pp. 2207-2211 (2018)
