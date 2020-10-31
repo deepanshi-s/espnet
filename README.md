@@ -40,8 +40,8 @@ make -j 4
 ```
 ## Extracting X-vectors 
 Once all the necessary packages have been installed:
-* Change MAIN_ROOT and KALDI_ROOT in path.sh file in espnet//egs//libritts//tts1 
- 
+* Change MAIN_ROOT and KALDI_ROOT in path.sh file in espnet//egs//libritts//tts1.
+* Run the x-vector extraction file, run.sh in libritts/tts1 folder.
 ``` 
 bash espnet//egs//libritts//tts1//run.sh
 ```
