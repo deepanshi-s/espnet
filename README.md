@@ -25,13 +25,15 @@ apt-get install -qq g++ automake autoconf libtool subversion
 git clone https://github.com/kaldi-asr/kaldi
 os.chdir('kaldi//tools')
 bash extras//install_mkl.sh
-bash extras/install_irstlm.sh
 sudo apt-get install sox
+```
+```
+bash extras//check_dependencies.sh
 ```
 In case the system has all the required packages the check_dependencies.sh file will output ALL OK. Else it will enlist the missing packages. Rerun the file after installiing all the requirements. 
 ```
 make -j 2
-bash extras//check_dependencies.sh
+bash extras/install_irstlm.sh
 ```
 ```
 cd espnet//tools//kaldi//src
